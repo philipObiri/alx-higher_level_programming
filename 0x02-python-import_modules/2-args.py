@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     number_of_command_line_arguments = len(sys.argv) - 1
     if number_of_command_line_arguments == 0:
-        print("0 argument is.")
+        print("0 arguments.")
     elif number_of_command_line_arguments == 1:
         print("1 argument:")
     else:
