@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Defs a simple class Square"""
+"""
+This is the "Square"  module.
+
+This module provides a simple Square class.
+"""
 
 
 class Square:
-    """An y Square class
-    with no attribute or methods.
-    """
+    """A simple Square class"""
     pass

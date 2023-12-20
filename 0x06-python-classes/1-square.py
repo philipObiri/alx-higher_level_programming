@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-"""Square cfinition"""
+"""
+This is the "Square"  module.
+
+This module provides a simple Square class with initialize size.
+"""
 
 
 class Square:
-    """Represuare
-
-    Atts:
-        __size (int): siz side of the square
-    """
+    """A class that defines a Square by size"""
     def __init__(self, size):
-        """Initiaa square
-
-        Args:
-            ssize of a side of the square
-
-        Ret None
-        """
         self.__size = size
