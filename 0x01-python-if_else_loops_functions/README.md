@@ -1,5 +1,4 @@
 # Python -:page_with_curl: 0x01-python-if_else_loops_functions
-
 ## About this project:
 In this project i learnt and practiced;
 - Why Python programming is awesome

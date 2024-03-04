@@ -1,70 +1,76 @@
 #!/usr/bin/python3
-"""
-This is the "Square"  module.
-
-This module provides a simple Square class with initialize size.
-Defaults size to 0. Raise error on invalid size inputs.
-Attribute position which takes a default (0, 0) tuple.
-Methods Getter and Setter properties for size and position.
-Method area returns size of area of the square.
-Method my_print prints the square using "#", moved over left and top using
-position tuple.
-Method __repr__ should return the string to print out the square.
+"""Square module definition.
+This mod a simple `Square` class
 """
 
 
 class Square:
-    """A class that defines a square by size, which defaults 0.
-    Also defines position using a tuple, which defaults (0, 0).
-    Square can also get area, and print square using '#'.
-    When printing, using position, offset on top and left.
+    """A 
+        size (`he size of the ``Square``.
     """
     def __init__(self, size=0, position=(0, 0)):
+        """Constructs a ``Square`` objet
+        Args:
+            size  value is 0.
+        Raises:
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
+        """
         self.size = size
         self.position = position
 
+    def __str__(self):
+        res = ""
+        if self.size:
+            line = " " * self.position[0] + "#" * self.size
+            res = "\n" * self.position[1]
+            res += (line + "\n") * (self.size - 1)
+            res += line
+        return res
+
+    def area(self):
+        """Computes the area of the ``Square``.
+        Return area of the ``Square``.
+        """
+        return self.size ** 2
+
     @property
     def size(self):
-        return self.__size
+        """
+        Args:
+            size (`int` The default value is 0.
+        Raises:
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
+        """
+        return self._Square__size
 
     @size.setter
     def size(self, size):
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
+        if not isinstance(size, int):
+            raise TypeError("size  an integer")
+        elif size < 0:
+            raise ValueError("size mue >= 0")
+        else:
+            self._Square__size = size
 
     @property
     def position(self):
-        return self.__position
+        """
+        Args:on (:obj: `tuple` of `int`): The position to start to
+                print the ``Square``.
+        Raises:
+            TypeError: If ``posa tuple of 2 integers
+        """
+        return self._Square__position
 
     @position.setter
-    def position(self, value):
-        if type(value) != tuple or len(value) != 2 or \
-           not all([type(i) == int for i in value]):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
-
-    def __repr__(self):
-        return (self.get_str())
-
-    def area(self):
-        return self.__size * self.__size
-
-    def get_str(self):
-        total = ""
-        if self.__size is 0:
-            total += "\n"
-            return total
-        for i in range(self.__position[1]):
-            total += "\n"
-        for i in range(self.__size):
-            total += (" " * self.__position[0])
-            total += ("#" * self.__size)
-            if i is not (self.__size - 1):
-                total += "\n"
-        return total
+    def position(self, position):
+        if not isinstance(position, tuple):
+            raise TypeError("positiof 2 positive integers")
+        else:
+            self._Square__position = position
 
     def my_print(self):
-        print(self.get_str())
+        """Prints a ``Sqed with '#'"""
+        print(self)
